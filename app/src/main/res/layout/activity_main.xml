@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="20sp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="Name"
+        android:singleLine="true"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/text_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:hint="Email id"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_name" />
+
+    <TextView
+        android:id="@+id/text_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:text="Select gender"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_email" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_gender"
+        tools:layout_editor_absoluteY="89dp">
+
+        <RadioButton
+            android:id="@+id/radio_male"
+            android:layout_width="110sp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1sp"
+            android:background="@drawable/radio1"
+            android:button="@android:color/transparent"
+            android:text="Male"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio_female"
+            android:layout_width="110sp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1sp"
+            android:background="@drawable/radio1"
+            android:button="@android:color/transparent"
+            android:text="Female"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio_trans"
+            android:layout_width="110sp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1sp"
+            android:background="@drawable/radio1"
+            android:button="@android:color/transparent"
+            android:text="Trans"
+            android:textAlignment="center" />
+
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropdown_menu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0sp"
+            android:hint="Select Stream"
+            android:inputType="none"
+            android:padding="0sp"
+            android:paddingStart="5sp"
+            android:text="Computer"
+            android:textSize="25sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/text_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:text="Select the Job type"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dropdown_menu" />
+
+    <Switch
+        android:id="@+id/swtich_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:showText="true"
+        android:textOff="Full Time"
+        android:textOn="Half Time"
+        android:textSize="25sp"
+        android:thumb="@drawable/switch1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_job"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/btn_viewEntries"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:text="View Entries"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_submit"
+        app:layout_constraintTop_toBottomOf="@+id/swtich_job"
+        app:layout_constraintVertical_bias="0.256" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_viewEntries"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swtich_job"
+        app:layout_constraintVertical_bias="0.256" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
